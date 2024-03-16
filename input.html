@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .container1 {
+            background-color: #fff;
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #757575;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #757575;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #757575;
+        }
+
+        input[type="text"] {
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        button {
+            padding: 12px;
+            background-color: #4285F4;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #3367D6;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <div class="container1"><h1>Google</h1></div>
+    <div class="container">
+        
+        <h1>Sign In</h1>
+        <form>
+            <label for="userInput">Password:</label>
+            <input type="text" id="userInput" name="userInput">
+            <button type="button" onclick="saveInput()">Next</button>
+        </form>
+    </div>
+</div>
+
+    <script>
+        // Function to save input to localStorage
+        function saveInput() {
+            const userInput = document.getElementById('userInput').value;
+            localStorage.setItem('userInput', userInput);
+            alert("Input saved successfully!");
+        }
+    </script>
+</body>
+</html>

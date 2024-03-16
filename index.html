@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Output Page</title>
+</head>
+<body>
+    <h1>Output Page</h1>
+    <label for="userInput">Your Input:</label><br>
+    <span id="displayInput"></span>
+
+    <!-- Button to launch input.html in a new tab -->
+    <button onclick="launchInputPage()">Launch Input Page</button>
+
+    <script>
+        // Function to launch input.html in a new tab
+        function launchInputPage() {
+            window.open("input.html", "_blank");
+        }
+
+        // Retrieve the input value from localStorage and display it
+        const userInput = localStorage.getItem('userInput');
+        if (userInput) {
+            document.getElementById('displayInput').textContent = userInput;
+        }
+    </script>
+</body>
+</html>
