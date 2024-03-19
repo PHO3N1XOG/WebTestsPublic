@@ -85,21 +85,6 @@
         <input type="submit" value="Submit">
     </form>
 
-    <!-- Empty iframe -->
-    <iframe frameborder="0" src="" style="height: 100%;"></iframe>
-
-    <script>
-        // Function to update iframe source based on query parameter
-        function updateIframe() {
-            var urlParams = new URLSearchParams(window.location.search);
-            var iframeUrl = urlParams.get('iframeUrl');
-            if (iframeUrl) {
-                document.getElementById('myIframe').src = iframeUrl;
-            }
-        }
-
-        // Call the function when the page loads
-        window.onload = updateIframe;
-    </script>
+    
 </body>
 </html>
