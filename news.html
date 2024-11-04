@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Message to Discord</title>
+    <style type="text/css">
+        /* Basic reset for padding and margins */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Background and alignment */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        /* Container for centered form */
+        .container {
+            text-align: center;
+            padding: 2rem;
+            max-width: 400px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Headline styling */
+        h1 {
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #444;
+        }
+
+        /* Input and textarea styling */
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 1rem;
+            background: #f1f1f1;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            color: #333;
+            font-size: 1rem;
+            outline: none;
+            transition: border 0.3s, background 0.3s;
+        }
+        input[type="text"]:focus, textarea:focus {
+            background: #fff;
+            border-color: #bbb;
+        }
+
+        /* Button styling */
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Be Anonymous</h1>
+        <input type="text" id="username" placeholder="Enter your username">
+        <textarea id="message" placeholder="Enter your message" rows="4"></textarea>
+        <button onclick="sendMessage()">Send Message</button>
+    </div>
+
+    <script>
+        function sendMessage() {
+            var username = document.getElementById('username').value;
+            var message = document.getElementById('message').value;
+            
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "https://discord.com/api/webhooks/1219592602840600647/WVT72KntvC0N054BLe_s_UTX61xHzqiMToIJnrgIxnv2y6GyDDn9MlGVZ6tADCM3MhGI", true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            var data = JSON.stringify({
+                username: username,
+                content: message
+            });
+            xhr.send(data);
+            alert('Data sent to discord {webhook} to the server directly of 1 clients');
+        }
+    </script>
+</body>
+</html>
